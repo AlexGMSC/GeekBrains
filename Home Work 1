@@ -1,0 +1,74 @@
+""" Задание 1 """
+
+username = input("Enter your name: ")
+age = int(input("Enter your age: "))
+
+print(f"Hi, {username}! You're already {age} years old!")
+
+user_name = 'Online Operator'
+user_message = 'Please, write your message.'
+count = 1
+
+print(f'({count}) Hi! My name is {user_name}. "{user_message}"')
+
+user_name = input('Please, type your name: ')
+user_message = input('Please, type your message: ')
+count += 1
+
+print(f'({count}) Dear {user_name}! I will transfer your message "{user_message}" to responsible person.')
+
+""" Задание 2 """
+
+num_seconds = int(input('Please enter seconds: '))
+
+hours, secs_tail = divmod(num_seconds, 60 * 60)
+minutes, seconds = divmod(secs_tail, 60)
+
+print('{:02d}:{:02d}:{:02d}'.format(hours, minutes, seconds))
+
+""" Задание 3 """
+
+convert = lambda x, n: int(str(x) * n)
+
+num = int(input('Please enter number: '))
+print(num + convert(num, 2) + convert(num, 3))
+
+""" Задание 4 """
+
+digits = list(input('Please enter integer minimum 2 sign: '))
+
+compare = lambda x, y: int(x) >= int(y)
+
+while len(digits) > 1:
+   _ = digits.pop(1) if compare(digits[0], digits[1]) else digits.pop(0)
+
+print(f'Maximum digit is {digits[0]}')
+
+
+""" Задание 5 """
+
+proceeds = float(input('Please, input company proceeds: '))
+expenses = float(input('Please, input company expenses: '))
+
+if proceeds > expenses:
+    print('The company works with dust')
+    income = proceeds - expenses
+    print('Company profitability {:%}'.format(income / proceeds))
+    employees = int(input('Please, input company employees quantity: '))
+    print(f'The company profitability per employee is {income / employees} у.е.')
+else:
+    print('The firm works without payback')
+
+""" Задание 6 """
+
+start_distance = float(input('Enter starting distance: '))
+target_distance = float(input('Enter target distance: '))
+
+distance = start_distance
+day_counter = 1
+
+while distance < target_distance:
+    day_counter += 1
+    distance *= 1.1
+
+print(day_counter)
